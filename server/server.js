@@ -38,7 +38,7 @@ app.use(express.json());
 
 // MongoDB Connection String (Replace `<username>`, `<password>`, and `<cluster-url>` with your Atlas details)
 const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://ayushsingh186312:rMm5I3THjQgngvnr@cluster0.1bxn4.mongodb.net/";
+const uri = "mongodb+srv://ayushsingh186312:h0MMXqdc1jobJb9x@cluster0.1bxn4.mongodb.net/";
 
 // Connect to MongoDB Atlas
 MongoClient.connect(uri, { useUnifiedTopology: true })
@@ -50,7 +50,7 @@ MongoClient.connect(uri, { useUnifiedTopology: true })
         const sharesRouter = createRouter(sharesCollection);
 
         // Use the router
-        app.use('/', sharesRouter);
+        app.use('/api/shares', sharesRouter);
     })
     .catch((err) => {
         console.error("Failed to connect to MongoDB Atlas", err);
